@@ -7,6 +7,7 @@ public class myThread extends Thread {
       super(name);
     }
   
+    // To execute run() in a new thread you have to use myThreadObjectName.start
     @Override
     public void run() {
         IntStream.rangeClosed(1,20).forEach( index -> 
