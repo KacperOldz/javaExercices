@@ -142,7 +142,33 @@ public class AtomicExample {
 ```
 ### 2. Data persistence
 
+In Java JDBC (Java Database Connectivity), a connection and statement are fundamental objects used for interacting with a relational database.
 
+1. Connection: 
+   - A Connection object represents a connection to a specific database. 
+   - It is typically established using the `DriverManager.getConnection()` method by providing the database URL, username, and password.
+   - 
+Example of creating a connection:
+```java
+Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "username", "password");
+```
+
+2. Statement:
+   - A Statement object represents a SQL statement that you want to execute against a database.
+   - There are two main types of statements: Statement and PreparedStatement.
+   - `Statement`: It is used to execute static SQL statements that do not contain parameters.
+   - Statements are executed using methods like `executeQuery()` for SELECT statements that return a ResultSet, `executeUpdate()` for SQL statements that modify data, and `execute()` for general-purpose execution.
+   
+Example of creating and executing a Statement:
+```java
+Statement statement = connection.createStatement();
+ResultSet resultSet = statement.executeQuery("SELECT * FROM my_table");
+while (resultSet.next()) {
+    // Process the retrieved data
+}
+```
+
+Overall, Connection and Statement are essential components of JDBC that allow Java applications to interact with relational databases by establishing connections, executing SQL statements, and managing database transactions. Proper usage and management of connections and statements are crucial for efficient and secure database access in Java applications.
 
 
 ## Definitions
@@ -154,5 +180,7 @@ public class AtomicExample {
 ### 2. Data persistence
 
 1. Maven - is a build automation tool used primarily for Java projects. It helps manage the project's build process, dependencies, and documentation in a consistent and efficient manner. Maven uses a project object model (POM) file to describe the project's structure, dependencies, and build process configuration.
+   
+2. Java Database Connectivity (JDBC) is an API (Application Programming Interface) provided by Java that allows Java applications to interact with relational databases. It provides a standard way for Java applications to perform database operations such as querying data, updating records, and executing stored procedures.
 
    
