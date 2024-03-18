@@ -167,6 +167,29 @@ while (resultSet.next()) {
     // Process the retrieved data
 }
 ```
+In JDBC (Java Database Connectivity), `Connection` objects provide methods to execute SQL statements against a database and manage transactions. Two important methods related to these tasks are `execute()` and `commit()`:
+
+3. connection.execute():
+   - The `execute()` method of the `Connection` interface is used to execute SQL statements against the database.
+   
+Example of using `execute()` to execute a SQL statement:
+```java
+Statement statement = connection.createStatement();
+boolean success = statement.execute("CREATE TABLE my_table (id INT PRIMARY KEY, name VARCHAR(50))");
+```
+
+4. connection.commit():
+   - The `commit()` method of the `Connection` interface is used to commit changes made in the current transaction to the database.
+
+Example of using `commit()` to commit a transaction:
+```java
+connection.setAutoCommit(false); // Disable auto-commit mode
+// Execute multiple SQL statements as part of the transaction
+// ...
+connection.commit(); // Commit the transaction
+```
+
+Overall, `execute()` is used to execute SQL statements against the database, while `commit()` is used to commit changes made in the current transaction to the database, ensuring data integrity and consistency in JDBC applications.
 
 Overall, Connection and Statement are essential components of JDBC that allow Java applications to interact with relational databases by establishing connections, executing SQL statements, and managing database transactions. Proper usage and management of connections and statements are crucial for efficient and secure database access in Java applications.
 
