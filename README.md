@@ -95,9 +95,24 @@ Runnable task = () -> {
 Thread thread = new Thread(task);
 thread.start(); // Start the thread
 ```
+Here's an explanation of `Callable` in Java concurrency with an example:
 
+10. `Callable`: The `Callable` interface in Java is similar to `Runnable`, but it can return a result and throw a checked exception. It represents a task that can be executed asynchronously, typically by submitting it to an `ExecutorService` for execution.
 
-10. `synchronized`: The `synchronized` keyword in Java is used to control access to critical sections of code by allowing only one thread to execute a synchronized block or method at a time. It provides a simple and effective way to achieve mutual exclusion and thread safety.
+Example:
+```java
+import java.util.concurrent.Callable;
+
+public class MyCallable implements Callable<Integer> {
+    @Override
+    public Integer call() throws Exception {
+        // Task logic here
+        return 42;
+    }
+}
+```
+
+11. `synchronized`: The `synchronized` keyword in Java is used to control access to critical sections of code by allowing only one thread to execute a synchronized block or method at a time. It provides a simple and effective way to achieve mutual exclusion and thread safety.
 
 Example:
 ```java
@@ -110,7 +125,7 @@ public class SynchronizedExample {
 }
 ```
 
-11. `Atomic` types: Atomic types in Java, such as `AtomicInteger`, `AtomicLong`, etc., provide atomic operations on single variables without the need for explicit synchronization. These classes ensure that operations like incrementing, decrementing, or updating a variable are performed atomically, without interference from other threads.
+12. `Atomic` types: Atomic types in Java, such as `AtomicInteger`, `AtomicLong`, etc., provide atomic operations on single variables without the need for explicit synchronization. These classes ensure that operations like incrementing, decrementing, or updating a variable are performed atomically, without interference from other threads.
 
 Example with `AtomicInteger`:
 ```java
