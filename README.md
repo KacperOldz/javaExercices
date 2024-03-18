@@ -147,7 +147,7 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 1. Connection: 
    - A Connection object represents a connection to a specific database. 
    - It is typically established using the `DriverManager.getConnection()` method by providing the database URL, username, and password.
-   - 
+   
 Example of creating a connection:
 ```java
 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "username", "password");
