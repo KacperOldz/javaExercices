@@ -3,6 +3,7 @@
 ## Subjects:
 
 1. Threads
+2. Data persistence
 
 ## Documentation:
 
@@ -139,6 +140,19 @@ public class AtomicExample {
     }
 }
 ```
+### 2. Data persistence
+
+
+
 
 ## Definitions
+
+### 1.Threads
+
 1. Race Condition - A race condition in occurs when multiple threads access shared resources or data concurrently, leading to unpredictable outcomes due to the timing of their execution. To avoid make problematic method synchronized or wrap the problematic code block/variable in synchronized(this) { } or Atimic type. Atomic types are more efficient but compel to use of object which makes code take use more memory.
+
+### 2. Data persistence
+
+1. Maven - is a build automation tool used primarily for Java projects. It helps manage the project's build process, dependencies, and documentation in a consistent and efficient manner. Maven uses a project object model (POM) file to describe the project's structure, dependencies, and build process configuration.
+
+   
