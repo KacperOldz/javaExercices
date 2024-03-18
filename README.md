@@ -204,6 +204,10 @@ Overall, Connection and Statement are essential components of JDBC that allow Ja
 
 1. Maven - is a build automation tool used primarily for Java projects. It helps manage the project's build process, dependencies, and documentation in a consistent and efficient manner. Maven uses a project object model (POM) file to describe the project's structure, dependencies, and build process configuration.
    
-2. Java Database Connectivity (JDBC) is an API (Application Programming Interface) provided by Java that allows Java applications to interact with relational databases. It provides a standard way for Java applications to perform database operations such as querying data, updating records, and executing stored procedures.
+2. Java Database Connectivity (JDBC) is an API (Application Programming Interface) provided by Java that allows Java applications to interact with relational databases. It provides a standard way for Java applications to perform database operations such as querying data, updating records, and executing stored procedures. Old and rarely used, but may be useful for migration into more efficient tech
+
+3. JPA stands for Java Persistence API. It is a standard specification for ORM (Object-Relational Mapping) frameworks in Java, which allows developers to map Java objects to relational database tables and vice versa. JPA provides a high-level abstraction over the underlying database interactions, making it easier for developers to work with databases in Java applications.
+
+4. Hibernate is a popular open-source ORM (Object-Relational Mapping) framework for Java applications. It provides a powerful and flexible way to map Java objects to relational database tables and vice versa, simplifying database interactions and reducing the amount of boilerplate code required for database access.
 
    
