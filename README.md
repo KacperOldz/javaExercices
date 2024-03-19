@@ -189,10 +189,34 @@ connection.setAutoCommit(false); // Disable auto-commit mode
 connection.commit(); // Commit the transaction
 ```
 
-Overall, `execute()` is used to execute SQL statements against the database, while `commit()` is used to commit changes made in the current transaction to the database, ensuring data integrity and consistency in JDBC applications.
+5. EntityManagerFactory:
+`EntityManagerFactory` is an interface that represents a factory for `EntityManager` instances.
 
-Overall, Connection and Statement are essential components of JDBC that allow Java applications to interact with relational databases by establishing connections, executing SQL statements, and managing database transactions. Proper usage and management of connections and statements are crucial for efficient and secure database access in Java applications.
+Example of creating an `EntityManagerFactory`:
+```java
+EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
+```
 
+6. EntityManager:
+   - `EntityManager` is an interface that represents a JPA runtime interface for interacting with the persistence context, managing entity instances, and performing database operations.
+   - It serves as a bridge between the application code and the underlying database, providing methods for CRUD (Create, Read, Update, Delete) operations, JPQL queries, and transaction management.
+
+Example of using an `EntityManager`:
+```java
+EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
+EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+entityManager.getTransaction().begin();
+// Perform database operations using EntityManager
+entityManager.persist(entity);
+entityManager.merge(entity);
+entityManager.remove(entity);
+// Commit the transaction
+entityManager.getTransaction().commit();
+
+entityManager.close();
+entityManagerFactory.close();
+```
 
 ## Definitions
 
@@ -209,5 +233,7 @@ Overall, Connection and Statement are essential components of JDBC that allow Ja
 3. JPA stands for Java Persistence API. It is a standard specification for ORM (Object-Relational Mapping) frameworks in Java, which allows developers to map Java objects to relational database tables and vice versa. JPA provides a high-level abstraction over the underlying database interactions, making it easier for developers to work with databases in Java applications.
 
 4. Hibernate is a popular open-source ORM (Object-Relational Mapping) framework for Java applications. It provides a powerful and flexible way to map Java objects to relational database tables and vice versa, simplifying database interactions and reducing the amount of boilerplate code required for database access.
+
+5. Entity - is a lightweight, persistent domain object that represents a data entity stored in a relational database
 
    
