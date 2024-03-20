@@ -236,4 +236,4 @@ entityManagerFactory.close();
 
 5. Entity - is a lightweight, persistent domain object that represents a data entity stored in a relational database
 
-   
+6. CRUD - stands for Create, Read, Update, and Delete. It is an acronym commonly used in the context of database management and programming to describe the four basic functions that are often implemented in database applications
