@@ -1,6 +1,7 @@
 package pl.clockworkjava.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -14,6 +15,9 @@ public class Student {
     @Column(name="numer_telefonu", unique = true)
     String telephone;
 
+    @Embedded
+    Address address;
+
     private Student() {
 
     }
@@ -21,6 +25,7 @@ public class Student {
     public Student(int id, String name, String telephone) {
         this.id = id;
         this.name = name;
+        this.telephone = telephone;
     }
 
     @Override
@@ -30,5 +35,9 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", telephone='" + telephone + '\'' +
                 '}';
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
