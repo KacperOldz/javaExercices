@@ -1,4 +1,4 @@
-# Repository made to store exercices that I made while learning JAVA language
+# Repository for Java Exercises
 
 ## Subjects:
 
@@ -7,214 +7,176 @@
 
 ## Documentation:
 
-### 1.Threads
+### 1. Threads
 
-1. `thenApply()`: This method applies a function to the result of a CompletableFuture when it completes, returning a new CompletableFuture with the transformed result.
-Example:
-```java
-CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
-CompletableFuture<String> modifiedFuture = future.thenApply(result -> result + " World");
-```
-</br>
-2. `thenCompose()`: It applies a function returning a CompletableFuture to the result of a CompletableFuture, flattening the nested CompletableFutures into a single CompletableFuture.
-Example:
-```java
-CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
-CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
-CompletableFuture<String> combinedFuture = future1.thenCompose(result1 -> future2.thenApply(result2 -> result1 + result2));
-```
-</br>
-3. `thenAccept()`: This method accepts a consumer that will be executed with the result of the CompletableFuture when it completes, but it doesn't return a result.
-Example:
-```java
-CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
-future.thenAccept(result -> System.out.println(result));
-```
+1. **thenApply()**:
+   - This method applies a function to the result of a CompletableFuture when it completes, returning a new CompletableFuture with the transformed result.
+   - Example:
+     ```java
+     CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
+     CompletableFuture<String> modifiedFuture = future.thenApply(result -> result + " World");
+     ```
 
-</br>
-4. `exceptionally()`: It handles exceptions that may occur during the execution of a CompletableFuture, allowing you to provide a fallback value or perform recovery actions.
-Example:
-```java
-CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
-    if (Math.random() < 0.5) {
-        throw new RuntimeException("Error occurred!");
-    }
-    return "No error";
-}).exceptionally(ex -> "Handled exception: " + ex.getMessage());
-```
+2. **thenCompose()**:
+   - It applies a function returning a CompletableFuture to the result of a CompletableFuture, flattening the nested CompletableFutures into a single CompletableFuture.
+   - Example:
+     ```java
+     CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
+     CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
+     CompletableFuture<String> combinedFuture = future1.thenCompose(result1 -> future2.thenApply(result2 -> result1 + result2));
+     ```
 
-</br>
-5. `allOf()`: Waits for all of the provided CompletableFutures to complete, returning a CompletableFuture that completes when all of them have completed, regardless of their individual results.
-Example:
-```java
-CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
-CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
-CompletableFuture<Void> allOfFuture = CompletableFuture.allOf(future1, future2);
-```
+3. **thenAccept()**:
+   - This method accepts a consumer that will be executed with the result of the CompletableFuture when it completes, but it doesn't return a result.
+   - Example:
+     ```java
+     CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
+     future.thenAccept(result -> System.out.println(result));
+     ```
 
-</br>
-6. `anyOf()`: Waits for any of the provided CompletableFutures to complete, returning a CompletableFuture that completes as soon as any of them completes, regardless of their individual results.
-Example:
-```java
-CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
-CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
-CompletableFuture<Object> anyOfFuture = CompletableFuture.anyOf(future1, future2);
-```
+4. **exceptionally()**:
+   - It handles exceptions that may occur during the execution of a CompletableFuture, allowing you to provide a fallback value or perform recovery actions.
+   - Example:
+     ```java
+     CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+         if (Math.random() < 0.5) {
+             throw new RuntimeException("Error occurred!");
+         }
+         return "No error";
+     }).exceptionally(ex -> "Handled exception: " + ex.getMessage());
+     ```
 
-</br>
-7. `Executor`: The Executor interface provides a way to manage and execute tasks asynchronously in a thread pool. It decouples task submission from task execution, allowing you to focus on the logic of your tasks while the Executor handles the details of thread management.
-Example:
-```java
-Executor executor = Executors.newFixedThreadPool(5);
-executor.execute(() -> {
-    // Task logic here
-    System.out.println("Task executed asynchronously.");
-});
-```
+5. **allOf()**:
+   - Waits for all of the provided CompletableFutures to complete, returning a CompletableFuture that completes when all of them have completed, regardless of their individual results.
+   - Example:
+     ```java
+     CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
+     CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
+     CompletableFuture<Void> allOfFuture = CompletableFuture.allOf(future1, future2);
+     ```
 
-</br>
-8. `Thread`: In Java, a Thread represents an independent path of execution within a program. It allows concurrent execution of multiple tasks or operations within a single process.
-Example:
-```java
-Thread thread = new Thread(() -> {
-    // Task logic here
-    System.out.println("Thread executing.");
-});
-thread.start(); // Start the thread
-```
+6. **anyOf()**:
+   - Waits for any of the provided CompletableFutures to complete, returning a CompletableFuture that completes as soon as any of them completes, regardless of their individual results.
+   - Example:
+     ```java
+     CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
+     CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
+     CompletableFuture<Object> anyOfFuture = CompletableFuture.anyOf(future1, future2);
+     ```
 
-</br>
-9. `Runnable`: The Runnable interface represents a task or unit of work that can be executed asynchronously by a Thread. It provides a way to encapsulate the code to be executed into a separate entity.
-Example:
-```java
-Runnable task = () -> {
-    // Task logic here
-    System.out.println("Runnable task executed.");
-};
-Thread thread = new Thread(task);
-thread.start(); // Start the thread
-```
+7. **Executor**:
+   - The Executor interface provides a way to manage and execute tasks asynchronously in a thread pool. It decouples task submission from task execution, allowing you to focus on the logic of your tasks while the Executor handles the details of thread management.
+   - Example:
+     ```java
+     Executor executor = Executors.newFixedThreadPool(5);
+     executor.execute(() -> {
+         // Task logic here
+         System.out.println("Task executed asynchronously.");
+     });
+     ```
 
-</br>
-10. `Callable`: The `Callable` interface in Java is similar to `Runnable`, but it can return a result and throw a checked exception. It represents a task that can be executed asynchronously, typically by submitting it to an `ExecutorService` for execution.
-Example:
-```java
-import java.util.concurrent.Callable;
+8. **Thread**:
+   - In Java, a Thread represents an independent path of execution within a program. It allows concurrent execution of multiple tasks or operations within a single process.
+   - Example:
+     ```java
+     Thread thread = new Thread(() -> {
+         // Task logic here
+         System.out.println("Thread executing.");
+     });
+     thread.start(); // Start the thread
+     ```
 
-public class MyCallable implements Callable<Integer> {
-    @Override
-    public Integer call() throws Exception {
-        // Task logic here
-        return 42;
-    }
-}
-```
+9. **Runnable**:
+   - The Runnable interface represents a task or unit of work that can be executed asynchronously by a Thread. It provides a way to encapsulate the code to be executed into a separate entity.
+   - Example:
+     ```java
+     Runnable task = () -> {
+         // Task logic here
+         System.out.println("Runnable task executed.");
+     };
+     Thread thread = new Thread(task);
+     thread.start(); // Start the thread
+     ```
 
-</br>
-11. `synchronized`: The `synchronized` keyword in Java is used to control access to critical sections of code by allowing only one thread to execute a synchronized block or method at a time. It provides a simple and effective way to achieve mutual exclusion and thread safety.
-Example:
-```java
-public class SynchronizedExample {
-    private int count = 0;
+10. **Callable**:
+    - The Callable interface in Java is similar to Runnable, but it can return a result and throw a checked exception. It represents a task that can be executed asynchronously, typically by submitting it to an ExecutorService for execution.
+    - Example:
+      ```java
+      import java.util.concurrent.Callable;
 
-    public synchronized void increment() {
-        count++;
-    }
-}
-```
+      public class MyCallable implements Callable<Integer> {
+          @Override
+          public Integer call() throws Exception {
+              // Task logic here
+              return 42;
+          }
+      }
+      ```
 
-</br>
-12. `Atomic` types: Atomic types in Java, such as `AtomicInteger`, `AtomicLong`, etc., provide atomic operations on single variables without the need for explicit synchronization. These classes ensure that operations like incrementing, decrementing, or updating a variable are performed atomically, without interference from other threads.
-Example with `AtomicInteger`:
-```java
-import java.util.concurrent.atomic.AtomicInteger;
+11. **synchronized**:
+    - The synchronized keyword in Java is used to control access to critical sections of code by allowing only one thread to execute a synchronized block or method at a time. It provides a simple and effective way to achieve mutual exclusion and thread safety.
+    - Example:
+      ```java
+      public class SynchronizedExample {
+          private int count = 0;
 
-public class AtomicExample {
-    private AtomicInteger count = new AtomicInteger(0);
+          public synchronized void increment() {
+              count++;
+          }
+      }
+      ```
 
-    public void increment() {
-        count.incrementAndGet();
-    }
-}
-```
+12. **Atomic types**:
+    - Atomic types in Java, such as AtomicInteger, AtomicLong, etc., provide atomic operations on single variables without the need for explicit synchronization. These classes ensure that operations like incrementing, decrementing, or updating a variable are performed atomically, without interference from other threads.
+    - Example with AtomicInteger:
+      ```java
+      import java.util.concurrent.atomic.AtomicInteger;
 
-</br>
-### 2. Data persistence
+      public class AtomicExample {
+          private AtomicInteger count = new AtomicInteger(0);
+
+          public void increment() {
+              count.incrementAndGet();
+          }
+      }
+      ```
+
+### 2. Data Persistence
 
 In Java JDBC (Java Database Connectivity), a connection and statement are fundamental objects used for interacting with a relational database.
-1. Connection: 
-   - A Connection object represents a connection to a specific database. 
-   - It is typically established using the `DriverManager.getConnection()` method by providing the database URL, username, and password.
-Example of creating a connection:
-```java
-Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "username", "password");
-```
 
-</br>
-2. Statement:
+1. **Connection**:
+   - A Connection object represents a connection to a specific database.
+   - It is typically established using the DriverManager.getConnection() method by providing the database URL, username, and password.
+   - Example of creating a connection:
+     ```java
+     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "username", "password");
+     ```
+
+2. **Statement**:
    - A Statement object represents a SQL statement that you want to execute against a database.
    - There are two main types of statements: Statement and PreparedStatement.
-   - `Statement`: It is used to execute static SQL statements that do not contain parameters.
-   - Statements are executed using methods like `executeQuery()` for SELECT statements that return a ResultSet, `executeUpdate()` for SQL statements that modify data, and `execute()` for general-purpose execution.
-Example of creating and executing a Statement:
-```java
-Statement statement = connection.createStatement();
-ResultSet resultSet = statement.executeQuery("SELECT * FROM my_table");
-while (resultSet.next()) {
-    // Process the retrieved data
-}
-```
-In JDBC (Java Database Connectivity), `Connection` objects provide methods to execute SQL statements against a database and manage transactions. Two important methods related to these tasks are `execute()` and `commit()`:
+   - Statement: It is used to execute static SQL statements that do not contain parameters.
+   - Statements are executed using methods like executeQuery() for SELECT statements that return a ResultSet, executeUpdate() for SQL statements that modify data, and execute() for general-purpose execution.
+   - Example of creating and executing a Statement:
+     ```java
+     Statement statement = connection.createStatement();
+     ResultSet resultSet = statement.executeQuery("SELECT * FROM my_table");
+     while (resultSet.next()) {
+         // Process the retrieved data
+     }
+     ```
 
-</br>
-3. connection.execute():
-   - The `execute()` method of the `Connection` interface is used to execute SQL statements against the database.
-Example of using `execute()` to execute a SQL statement:
-```java
-Statement statement = connection.createStatement();
-boolean success = statement.execute("CREATE TABLE my_table (id INT PRIMARY KEY, name VARCHAR(50))");
-```
+3. **EntityManagerFactory**:
+   - EntityManagerFactory is an interface that represents a factory for EntityManager instances.
+   - Example of creating an EntityManagerFactory:
+     ```java
+     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
+     ```
 
-</br>
-4. connection.commit():
-   - The `commit()` method of the `Connection` interface is used to commit changes made in the current transaction to the database.
-Example of using `commit()` to commit a transaction:
-```java
-connection.setAutoCommit(false); // Disable auto-commit mode
-// Execute multiple SQL statements as part of the transaction
-// ...
-connection.commit(); // Commit the transaction
-```
+4. **EntityManager**:
+   - EntityManager is an interface that represents a JPA runtime interface for interacting with the persistence context, managing entity instances, and performing database
 
-</br>
-5. EntityManagerFactory:
-`EntityManagerFactory` is an interface that represents a factory for `EntityManager` instances.
-Example of creating an `EntityManagerFactory`:
-```java
-EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
-```
-
-</br>
-6. EntityManager:
-   - `EntityManager` is an interface that represents a JPA runtime interface for interacting with the persistence context, managing entity instances, and performing database operations.
-   - It serves as a bridge between the application code and the underlying database, providing methods for CRUD (Create, Read, Update, Delete) operations, JPQL queries, and transaction management.
-Example of using an `EntityManager`:
-```java
-EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
-EntityManager entityManager = entityManagerFactory.createEntityManager();
-entityManager.getTransaction().begin();
-// Perform database operations using EntityManager
-entityManager.persist(entity);
-entityManager.merge(entity);
-entityManager.remove(entity);
-// Commit the transaction
-entityManager.getTransaction().commit();
-
-entityManager.close();
-entityManagerFactory.close();
-```
-
-</br>
 7. @Embedded, @Embeddable - Makes class automatically convent to the part of table while executing
 ```
 @Embeddable
