@@ -15,7 +15,7 @@ Example:
 CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
 CompletableFuture<String> modifiedFuture = future.thenApply(result -> result + " World");
 ```
-  
+</br>
 2. `thenCompose()`: It applies a function returning a CompletableFuture to the result of a CompletableFuture, flattening the nested CompletableFutures into a single CompletableFuture.
 Example:
 ```java
