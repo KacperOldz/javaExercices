@@ -15,7 +15,6 @@ Example:
 CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
 CompletableFuture<String> modifiedFuture = future.thenApply(result -> result + " World");
 ```
-
 </br>
 2. `thenCompose()`: It applies a function returning a CompletableFuture to the result of a CompletableFuture, flattening the nested CompletableFutures into a single CompletableFuture.
 Example:
@@ -24,7 +23,6 @@ CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello")
 CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World");
 CompletableFuture<String> combinedFuture = future1.thenCompose(result1 -> future2.thenApply(result2 -> result1 + result2));
 ```
-</br>
 </br>
 3. `thenAccept()`: This method accepts a consumer that will be executed with the result of the CompletableFuture when it completes, but it doesn't return a result.
 Example:
@@ -54,7 +52,7 @@ CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> " World"
 CompletableFuture<Void> allOfFuture = CompletableFuture.allOf(future1, future2);
 ```
 
-
+</br>
 6. `anyOf()`: Waits for any of the provided CompletableFutures to complete, returning a CompletableFuture that completes as soon as any of them completes, regardless of their individual results.
 Example:
 ```java
@@ -85,7 +83,7 @@ Thread thread = new Thread(() -> {
 thread.start(); // Start the thread
 ```
 
-
+</br>
 9. `Runnable`: The Runnable interface represents a task or unit of work that can be executed asynchronously by a Thread. It provides a way to encapsulate the code to be executed into a separate entity.
 Example:
 ```java
@@ -96,7 +94,6 @@ Runnable task = () -> {
 Thread thread = new Thread(task);
 thread.start(); // Start the thread
 ```
-Here's an explanation of `Callable` in Java concurrency with an example:
 
 </br>
 10. `Callable`: The `Callable` interface in Java is similar to `Runnable`, but it can return a result and throw a checked exception. It represents a task that can be executed asynchronously, typically by submitting it to an `ExecutorService` for execution.
