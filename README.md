@@ -218,6 +218,27 @@ entityManager.close();
 entityManagerFactory.close();
 ```
 
+7. @Embedded, @Embeddable - Makes class automatically convent to the part of table while executing
+```
+@Embeddable
+public class Address {
+    private String city;
+    private String street;
+    private String postalCode;
+
+    public Address(String city, String street, String postalCode) {
+        this.city = city;
+        this.street = street;
+        this.postalCode = postalCode;
+    }
+}
+```
+```
+    @Embedded
+    Address address;
+```
+
+
 ## Definitions
 
 ### 1.Threads
