@@ -177,43 +177,74 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 4. **EntityManager**:
    - EntityManager is an interface that represents a JPA runtime interface for interacting with the persistence context, managing entity instances, and performing database
 
-7. @Embedded, @Embeddable
+5. @Embedded, @Embeddable
    - Makes class automatically convent to the part of table while executing
-   - ```
-   @Embeddable
-   public class Address {
-       private String city;
-       private String street;
-       private String postalCode;
-   
-       public Address(String city, String street, String postalCode) {
-           this.city = city;
-           this.street = street;
-           this.postalCode = postalCode;
-       }
-   }
-   ```
-   ```
-       @Embedded
-       Address address;
-   ```
+   - Example
+      ```java
+      @Embeddable
+      public class Address {
+          private String city;
+          private String street;
+          private String postalCode;
+      
+          public Address(String city, String street, String postalCode) {
+              this.city = city;
+              this.street = street;
+              this.postalCode = postalCode;
+          }
+      }
+      ```
+      ```
+          @Embedded
+          Address address;
+      ```
+6. @OneToOne(mappedBy="NameOfMappingTable")
+   - Is used to define a one-to-one relationship between two entities. The mappedBy attribute indicates the field name in the owning entity that owns the relationship.
+   - ```java
+     @Entity
+      public class Customer {
+          @Id
+          @GeneratedValue
+          private Long id;
+      
+          @OneToOne(mappedBy = "customer")
+          private CustomerRecord customerRecord;
+      
+          // getters and setters
+      }
+      
+      @Entity
+      public class CustomerRecord {
+          @Id
+          @GeneratedValue
+          private Long id;
+      
+          @OneToOne
+          @JoinColumn(name = "customer_id")
+          private Customer customer;
+      
+          // getters and setters
+      }
+     ```
+7. @GeneratedValue(strategy = GenerationType.AUTO)
+   - Makes indexes generate automatically, which eliminates duty to write id for example
+   - ```java
+       @Id
+       @GeneratedValue(strategy = GenerationType.AUTO)
+       private int id;
+     ```
+
 ## Definitions
 
 ### 1.Threads
 
 1. Race Condition - A race condition in occurs when multiple threads access shared resources or data concurrently, leading to unpredictable outcomes due to the timing of their execution. To avoid make problematic method synchronized or wrap the problematic code block/variable in synchronized(this) { } or Atimic type. Atomic types are more efficient but compel to use of object which makes code take use more memory.
 
-</br>
 ### 2. Data persistence
 
 1. Maven - is a build automation tool used primarily for Java projects. It helps manage the project's build process, dependencies, and documentation in a consistent and efficient manner. Maven uses a project object model (POM) file to describe the project's structure, dependencies, and build process configuration.
-   </br>
 2. Java Database Connectivity (JDBC) is an API (Application Programming Interface) provided by Java that allows Java applications to interact with relational databases. It provides a standard way for Java applications to perform database operations such as querying data, updating records, and executing stored procedures. Old and rarely used, but may be useful for migration into more efficient tech
-</br>
 3. JPA stands for Java Persistence API. It is a standard specification for ORM (Object-Relational Mapping) frameworks in Java, which allows developers to map Java objects to relational database tables and vice versa. JPA provides a high-level abstraction over the underlying database interactions, making it easier for developers to work with databases in Java applications.
-</br>
 4. Hibernate is a popular open-source ORM (Object-Relational Mapping) framework for Java applications. It provides a powerful and flexible way to map Java objects to relational database tables and vice versa, simplifying database interactions and reducing the amount of boilerplate code required for database access.
-</br>
 5. Entity - is a lightweight, persistent domain object that represents a data entity stored in a relational database
-</br>
 6. CRUD - stands for Create, Read, Update, and Delete. It is an acronym commonly used in the context of database management and programming to describe the four basic functions that are often implemented in database applications
