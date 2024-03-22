@@ -177,27 +177,26 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 4. **EntityManager**:
    - EntityManager is an interface that represents a JPA runtime interface for interacting with the persistence context, managing entity instances, and performing database
 
-7. @Embedded, @Embeddable - Makes class automatically convent to the part of table while executing
-```
-@Embeddable
-public class Address {
-    private String city;
-    private String street;
-    private String postalCode;
-
-    public Address(String city, String street, String postalCode) {
-        this.city = city;
-        this.street = street;
-        this.postalCode = postalCode;
-    }
-}
-```
-```
-    @Embedded
-    Address address;
-```
-
-</br>
+7. @Embedded, @Embeddable
+   - Makes class automatically convent to the part of table while executing
+   - ```
+   @Embeddable
+   public class Address {
+       private String city;
+       private String street;
+       private String postalCode;
+   
+       public Address(String city, String street, String postalCode) {
+           this.city = city;
+           this.street = street;
+           this.postalCode = postalCode;
+       }
+   }
+   ```
+   ```
+       @Embedded
+       Address address;
+   ```
 ## Definitions
 
 ### 1.Threads
