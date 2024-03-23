@@ -1,0 +1,34 @@
+package pl.clockworkjava;
+
+import jakarta.persistence.*;
+import org.hibernate.internal.build.AllowSysOut;
+import pl.clockworkjava.entity.Student;
+import pl.clockworkjava.entity.Indeks;
+import pl.clockworkjava.entity.University;
+
+import java.util.List;
+
+public class Main {
+    static EntityManagerFactory factory = Persistence.createEntityManagerFactory("ClockworkPersistence");
+    static EntityManager manager = factory.createEntityManager();
+
+    public static void main(String[] args) {
+        createData();
+
+        TypedQuery<QueryResult> query = manager.createQuery("SELECT new pl.clockworkjava.QueryResult(s.name, s.indeks) FROM Students s",QueryResult.class);
+        query.getResultList().forEach(result -> {
+            System.out.println(result.toString());
+        });
+    }
+
+
+    private static void createData() {
+        manager.getTransaction().begin();
+        Student Kacper = manager.merge(new Student("Kacper", "01U"));
+        Student Piotr = manager.merge(new Student("Piotr", "02U"));
+
+
+
+        manager.getTransaction().commit();
+    }
+}
