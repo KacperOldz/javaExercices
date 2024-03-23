@@ -258,6 +258,16 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
       }
      ```
 
+12. @Relation(fetch = FetchType.LAZY)
+   - Defines if JPQL table should be fetched if it's not significant for needed operation
+   - Example:
+     ```java
+       @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+       private Indeks indeks;
+     ```
+### 3. Functional Programming
+
+
 ## Definitions
 
 ### 1.Threads
@@ -273,3 +283,6 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 5. Entity - is a lightweight, persistent domain object that represents a data entity stored in a relational database
 6. CRUD - stands for Create, Read, Update, and Delete. It is an acronym commonly used in the context of database management and programming to describe the four basic functions that are often implemented in database applications
 7. JPQL - query language used in Java Persistence API (JPA) to perform database operations on entities. It is similar to SQL
+8. PostageSQL - open-source relational database management system (RDBMS) that is widely used in Java programming and other application development environments
+
+### 3. Functional Programming
