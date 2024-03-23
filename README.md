@@ -239,7 +239,22 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 9. @ManyToMany
    - Is an annotation used to define a many-to-many relationship between two entities.
-  
+
+10. EntityManager.createQuery("SELECT t.Entity FROM table t", Entity.class).getResultList()
+   - Sends JPQL query to the database, returns array with found elements
+
+11. @NamedQuery, @NamedQueries
+   - Provide a way to define and manage database queries in a centralized and reusable manner.
+   -```java
+      @Entity
+      @NamedQuery(
+          name = "findEmployeeByName",
+          query = "SELECT e FROM Employee e WHERE e.name = :name"
+      )
+      public class Employee {
+          // Entity attributes and methods
+      }
+     ```
 
 ## Definitions
 
