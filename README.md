@@ -234,6 +234,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
        private int id;
      ```
 
+8. @OneToMany
+   - Is used to define a one-to-many relationship between two entities.
+
 ## Definitions
 
 ### 1.Threads
