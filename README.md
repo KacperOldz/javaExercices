@@ -198,8 +198,8 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
           @Embedded
           Address address;
       ```
-6. @OneToOne(mappedBy="NameOfMappingTable")
-   - Is used to define a one-to-one relationship between two entities. The mappedBy attribute indicates the field name in the owning entity that owns the relationship.
+6. @OneToOne(mappedBy="NameOfMappingTable", cascade = CascadeType.ALL)
+   - Is used to define a one-to-one relationship between two entities. The mappedBy attribute indicates the field name in the owning entity that owns the relationship. Cascading refers to the propagation of certain operations from a parent entity to its associated child entities. 
    - ```java
      @Entity
       public class Customer {
