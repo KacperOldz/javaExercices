@@ -228,7 +228,8 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
      ```
 7. @GeneratedValue(strategy = GenerationType.AUTO)
    - Makes indexes generate automatically, which eliminates duty to write id for example
-   - ```java
+   - Example:
+     ```java
        @Id
        @GeneratedValue(strategy = GenerationType.AUTO)
        private int id;
@@ -245,8 +246,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 11. @NamedQuery, @NamedQueries
    - Provide a way to define and manage database queries in a centralized and reusable manner.
-   -```java
-      @Entity
+   - Example:
+     ```java
+     @Entity
       @NamedQuery(
           name = "findEmployeeByName",
           query = "SELECT e FROM Employee e WHERE e.name = :name"
