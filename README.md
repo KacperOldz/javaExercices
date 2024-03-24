@@ -286,3 +286,5 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 8. PostageSQL - open-source relational database management system (RDBMS) that is widely used in Java programming and other application development environments
 
 ### 3. Functional Programming
+
+Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
