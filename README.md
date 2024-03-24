@@ -287,4 +287,4 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 ### 3. Functional Programming
 
-Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
+1. Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
