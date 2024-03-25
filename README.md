@@ -288,3 +288,4 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 ### 3. Functional Programming
 
 1. Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
+2. Functional intrface - a functional interface is an interface that contains exactly one abstract method
