@@ -266,7 +266,12 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
        private Indeks indeks;
      ```
 ### 3. Functional Programming
-
+12. lambda expression
+   - is a concise way to represent an anonymous function, 
+   - Example:
+     ```java
+        MyFunctionalInterface myLambda = (int x, int y) -> System.out.println("Sum: " + (x + y));
+     ```
 
 ## Definitions
 
@@ -289,3 +294,5 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 1. Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
 2. Functional intrface - a functional interface is an interface that contains exactly one abstract method
+3. Lambda expressions - is a concise way to represent an anonymous function—a method without a name that can be passed around as an argument to other methods or stored in variables. They make code more readable and expressive, especially when working with interfaces that contain only one abstract method
+4. 
