@@ -266,7 +266,7 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
        private Indeks indeks;
      ```
 ### 3. Functional Programming
-12. lambda expression
+1. lambda expression
    - is a concise way to represent an anonymous function, 
    - Example:
      ```java
