@@ -4,6 +4,7 @@
 
 1. Threads
 2. Data persistence
+3. Functional programming
 
 ## Documentation:
 
@@ -296,6 +297,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
           }
       }
      ```
+
+   3. Consumer
+   -  represents an operation that accepts a single input argument and returns no result
      
 ## Definitions
 
