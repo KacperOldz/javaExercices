@@ -267,12 +267,36 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
      ```
 ### 3. Functional Programming
 1. lambda expression
-   - is a concise way to represent an anonymous function, 
+   - is a concise way to represent an anonymous function
    - Example:
      ```java
         MyFunctionalInterface myLambda = (int x, int y) -> System.out.println("Sum: " + (x + y));
      ```
 
+2. Predicate
+   - represents a boolean-valued function of one argument. This interface is widely used in functional-style programming
+   - Example:
+     ```java
+     public class Main {
+          public static void main(String[] args) {
+              List<String> words = Arrays.asList("apple", "banana", "pear", "orange", "grape");
+      
+              Predicate<String> lengthGreaterThanFive = s -> s.length() > 5;
+      
+              System.out.println("Words with length greater than 5:");
+              filterAndPrint(words, lengthGreaterThanFive);
+          }
+      
+          public static void filterAndPrint(List<String> words, Predicate<String> predicate) {
+              for (String word : words) {
+                  if (predicate.test(word)) {
+                      System.out.println(word);
+                  }
+              }
+          }
+      }
+     ```
+     
 ## Definitions
 
 ### 1.Threads
