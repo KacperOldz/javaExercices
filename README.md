@@ -300,6 +300,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
    3. Consumer
    -  represents an operation that accepts a single input argument and returns no result
+
+   4. Supplier
+   -  represents an operation that accepts a single input argument and returns no result
      
 ## Definitions
 
