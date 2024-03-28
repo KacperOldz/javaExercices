@@ -329,4 +329,4 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 1. Functional programming - paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
 2. Functional intrface - a functional interface is an interface that contains exactly one abstract method
 3. Lambda expressions - is a concise way to represent an anonymous function—a method without a name that can be passed around as an argument to other methods or stored in variables. They make code more readable and expressive, especially when working with interfaces that contain only one abstract method
-4. 
+4. primitive functional interface - functional interface that is specialized to work with primitive data types (e.g., int, double, long, etc.) rather than reference types
