@@ -298,14 +298,17 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
       }
      ```
 
-   3. Consumer
-   -  represents an operation that accepts a single input argument and returns no result
+3. Consumer
+-  represents an operation that accepts a single input argument and returns no result
 
-   4. Supplier
-   -  represents an operation that accepts a single input argument and returns no result
+4. Supplier
+-  represents an operation that accepts a single input argument and returns no result
 
-   5. Supplier
-   - provides a single abstract method called apply(), which accepts an argument of type T and returns a result of type R. It represents a function that accepts an argument of type T and returns a result of type R
+5. Supplier
+- provides a single abstract method called apply(), which accepts an argument of type T and returns a result of type R. It represents a function that accepts an argument of type T and returns a result of type R
+
+6. Optional
+- represents an object that may or may not contain a non-null value
      
 ## Definitions
 
