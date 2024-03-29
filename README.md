@@ -334,3 +334,4 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 3. Lambda expressions - is a concise way to represent an anonymous function—a method without a name that can be passed around as an argument to other methods or stored in variables. They make code more readable and expressive, especially when working with interfaces that contain only one abstract method
 4. primitive functional interface - functional interface that is specialized to work with primitive data types (e.g., int, double, long, etc.) rather than reference types
 5. method reference - shorthand syntax for referring to methods or constructors of classes or objects (System.out::println)
+6. Steam API - functional-style operations on sequences of elements, facilitating concise and readable code for filtering, mapping, aggregating, and transforming data
