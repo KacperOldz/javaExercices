@@ -309,6 +309,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 6. Optional
 - represents an object that may or may not contain a non-null value
+
+7. Stream.filter()
+- is used to filter elements of a stream based on a specified predicate
      
 ## Definitions
 
