@@ -312,6 +312,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 7. Stream.filter()
 - is used to filter elements of a stream based on a specified predicate
+
+8. Stream.map()
+- transform each element of a stream according to a given function
      
 ## Definitions
 
