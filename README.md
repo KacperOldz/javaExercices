@@ -315,6 +315,18 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 8. Stream.map()
 - transform each element of a stream according to a given function
+
+9. Stream.ForEach
+- used to iterate over each element of a stream and perform an action for each element
+
+10. Stream.findFirst()
+- returns an Optional containing the first element of the stream, or an empty Optional if the stream is empty
+
+11. Stream.anyMatch()
+- returns true if any element of the stream matches the given predicate, otherwise returns false
+
+12. Stream.allMatch()
+- returns true if all elements of the stream match the given predicate, otherwise returns false
      
 ## Definitions
 
