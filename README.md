@@ -327,6 +327,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 12. Stream.allMatch()
 - returns true if all elements of the stream match the given predicate, otherwise returns false
+
+13. Stream.reduce()
+- performs a reduction on the elements of the stream. It combines all elements of the stream into a single result
      
 ## Definitions
 
