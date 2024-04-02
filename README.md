@@ -330,6 +330,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 13. Stream.reduce()
 - performs a reduction on the elements of the stream. It combines all elements of the stream into a single result
+
+14. Stream.collect()
+- operation that accumulates the elements of a stream into a collection or other data structure, takes a Collector as its parameter
      
 ## Definitions
 
