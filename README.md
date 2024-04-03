@@ -333,7 +333,24 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 14. Stream.collect()
 - operation that accumulates the elements of a stream into a collection or other data structure, takes a Collector as its parameter
-     
+ 
+15. Stream.limit()
+- Restricts the number of elements in a stream to a specified maximum size
+ 
+16. Stream.skip()
+- skips a specified number of elements in a stream, allowing processing to continue with the remaining elements
+ 
+17. Stream.distinct()
+- filters out duplicate elements from a stream, ensuring that each element appears only once in the resulting stream
+ 
+18. Stream.sorted()
+- orders the elements of a stream according to a specified comparator or natural ordering. It can sort elements in ascending or descending order
+ 
+19. Stream.count()
+- returns the number of elements in a stream. It is a terminal operation that triggers the processing of the stream and returns the count of elements
+
+20. Comparator<>
+- An interface used to define a comparison function, allowing objects to be sorted or compared based on specific criteria
 ## Definitions
 
 ### 1.Threads
