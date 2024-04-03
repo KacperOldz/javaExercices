@@ -351,6 +351,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 20. Comparator<>
 - An interface used to define a comparison function, allowing objects to be sorted or compared based on specific criteria
+
+21. mapToPrimitive
+- methods are efficient alternatives to their counterpart methods in Stream API, tailored specifically for primitive data types to avoid the overhead of boxing and unboxing
 ## Definitions
 
 ### 1.Threads
