@@ -5,6 +5,7 @@
 1. Threads
 2. Data persistence
 3. Functional programming
+4. Modules
 
 ## Documentation:
 
@@ -354,6 +355,9 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 21. mapToPrimitive
 - methods are efficient alternatives to their counterpart methods in Stream API, tailored specifically for primitive data types to avoid the overhead of boxing and unboxing
+  
+### 4.Modules
+  
 ## Definitions
 
 ### 1.Threads
@@ -379,3 +383,7 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 4. primitive functional interface - functional interface that is specialized to work with primitive data types (e.g., int, double, long, etc.) rather than reference types
 5. method reference - shorthand syntax for referring to methods or constructors of classes or objects (System.out::println)
 6. Steam API - functional-style operations on sequences of elements, facilitating concise and readable code for filtering, mapping, aggregating, and transforming data
+
+### 4. Modules
+
+1. Modular architecture - practice of organizing a Java application into separate modules or components that can be developed, maintained, and deployed independently
