@@ -386,4 +386,4 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 
 ### 4. Modules
 
-1. Modular architecture - practice of organizing a Java application into separate modules or components that can be developed, maintained, and deployed independently
+1. Modular architecture - practice of organizing a Java application into separate modules or components that can be developed, maintained, and deployed independently. Modular Java project must have  module-info.java file in src directory, what will contain all modules used in project. 
