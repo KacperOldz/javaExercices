@@ -356,8 +356,6 @@ In Java JDBC (Java Database Connectivity), a connection and statement are fundam
 21. mapToPrimitive
 - methods are efficient alternatives to their counterpart methods in Stream API, tailored specifically for primitive data types to avoid the overhead of boxing and unboxing
   
-### 4.Modules
-  
 ## Definitions
 
 ### 1.Threads
